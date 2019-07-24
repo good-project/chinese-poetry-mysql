@@ -3,7 +3,7 @@
 
 ## 表结构说明
 ```sql
-#####唐宋诗数据表
+#####
 create table poetry (
   id int(11) not null primary key auto_increment,
   author_id int(11) default 0,
@@ -12,7 +12,7 @@ create table poetry (
   yunlv_rule text default null,
   author varchar(255) not null,
   dynasty char(1) not null
-) engine = myisam, charset=utf8;
+) engine = myisam, charset=utf8, COMMENT='唐宋诗数据表';
 
 #####唐宋诗作者数据表
 create table poetry_author (
@@ -20,7 +20,7 @@ create table poetry_author (
   name varchar(255) not null,
   intro text default null,
   dynasty char(1) not null
-) engine = myisam, charset=utf8;
+) engine = myisam, charset=utf8,COMMENT='唐宋诗作者数据表';
 
 #####宋词作者数据表
 create table poems_author (
@@ -28,7 +28,7 @@ create table poems_author (
   name varchar(255) not null,
   intro_l text default null,
   intro_s text default null
-) engine = myisam, charset=utf8;
+) engine = myisam, charset=utf8,COMMENT='宋词作者数据表';
 
 #####宋词数据表
 create table poems (
@@ -37,14 +37,14 @@ create table poems (
   title varchar(255) not null,
   content text not null,
   author varchar(255) not null
-) engine = myisam, charset=utf8;
+) engine = myisam, charset=utf8,COMMENT='宋词数据表';
 
 #####论语数据表
 create table lunyu (
   id int(11) not null primary key auto_increment,
   chapter varchar(255) not null,
   content text not null
-) engine = myisam, charset=utf8;
+) engine = myisam, charset=utf8,COMMENT='论语数据表';
 
 #####诗经数据表
 create table shijing (
@@ -53,7 +53,7 @@ create table shijing (
   chapter varchar(255) not null,
   section varchar(255) not null,
   content text not null
-) engine = myisam, charset=utf8;
+) engine = myisam, charset=utf8,COMMENT='诗经数据表';
 ```
 
 ## 数据表字段说明
